@@ -61,13 +61,13 @@ If you’re using Xcode, watch the YouTube video on [How to Install and Use Agen
 
 The skill is called SwiftUI Pro, and can be triggered in various ways. For example, in Claude Code you would use this:
 
-> /swiftui-pro:swiftui-pro
+> /swiftui-pro
 
 And in Codex you would use this:
 
 > $swiftui-pro
 
-In both cases you can provide specific instructions if you want only a partial review. For example, `/swiftui-pro:swiftui-pro Check for deprecated API` on Claude, or `$swiftui-pro Focus on accessibility` in Codex.
+In both cases you can provide specific instructions if you want only a partial review. For example, `/swiftui-pro Check for deprecated API` on Claude, or `$swiftui-pro Focus on accessibility` in Codex.
 
 You can also trigger the skill using natural language:
 
