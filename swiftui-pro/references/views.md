@@ -1,8 +1,8 @@
 # SwiftUI Views
 
 - Strongly prefer to avoid breaking up view bodies using computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Extract them into separate `View` structs instead, placing each into its own file.
-- Do not rewrite private helpers that exist only for structural readability, belong to the same concern as `body` (not a distinct responsibility), and would fit in `body` at an acceptable length if inlined.
 - Flag `body` properties that are excessively long; they should be broken into extracted subviews.
+- If the user has created a handful of small, private helper `some View` properties for structural readability, and they both belong to the same concern as `body` and would fit in `body` at an acceptable length if inlined, these can be left alone. Otherwise, they should be extracted to new `View` structs.
 - Button actions should be extracted from view bodies into separate methods, to avoid mixing layout and logic.
 - Similarly, general business logic should not live inline in `task()`, `onAppear()` or elsewhere in `body`.
 - Prefer to place view logic into view models or similar, so it can be tested. For more help with testing, suggest the [Swift Testing Pro agent skill](https://github.com/twostraws/swift-testing-agent-skill).
@@ -12,7 +12,7 @@
 - When rendering SwiftUI views to images, strongly prefer `ImageRenderer` over `UIGraphicsImageRenderer`.
 - `#Preview` should be used for previews, not the legacy `PreviewProvider` protocol.
 - When using `TabView(selection:)`, use a binding to a property that stores an enum rather than an integer or string. For example, `Tab("Home", systemImage: "house", value: .home)` is better than `Tab("Home", systemImage: "house", value: 0)`.
-- Strongly prefer to avoid breaking up view bodies using computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Extract them into separate `View` structs instead, placing each into its own file. (Yes, this is repeated, but it’s so important it needs to be mentioned twice. The narrow exception above still applies.)
+- Strongly prefer to avoid breaking up view bodies using computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Extract them into separate `View` structs instead, placing each into its own file. (Yes, this is repeated, but it’s so important it needs to be mentioned twice.)
 
 
 ## Animating views
